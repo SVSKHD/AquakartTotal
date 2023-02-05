@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { auth, googleAuthProvider } from "../../firebase";
 import { toast } from "react-toastify";
-import { Button } from "antd";
+import { Button } from "react-bootstrap";
 import { MailOutlined, GoogleOutlined } from "@ant-design/icons";
+import {FaGoogle} from "react-icons/fa"
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { createOrUpdateUser } from "../../functions/auth";
+import AquaLogo from "../../LogoImages/logo.png"
 
 const Login = ({ history }) => {
   const [email, setEmail] = useState("");
@@ -142,34 +144,55 @@ const Login = ({ history }) => {
   );
 
   return (
-    <div className="container p-5">
-      <div className="row">
-        <div className="col-md-6 offset-md-3">
-          {loading ? (
-            <h4 className="text-danger">Loading...</h4>
-          ) : (
-            <h4>Login</h4>
-          )}
-          {loginForm()}
-
-          <Button
-            onClick={googleLogin}
-            type="danger"
-            className="mb-3"
-            block
-            shape="round"
-            icon={<GoogleOutlined />}
-            size="large"
-          >
-            Login with Google
-          </Button>
-
-          <Link to="/forgot/password" className="float-right text-danger">
-            Forgot Password
-          </Link>
+    // <div className="container p-5">
+    //   <div className="row">
+    //     <div className="col-md-6 offset-md-3">
+    //       {loading ? (
+    //         <h4 className="text-danger">Loading...</h4>
+    //       ) : (
+    //         <h4>Login</h4>
+    //       )}
+    //       {loginForm()}
+    //
+    //       <Button
+    //         onClick={googleLogin}
+    //         type="danger"
+    //         className="mb-3"
+    //         block
+    //         shape="round"
+    //         size="large"
+    //       >
+    //           <FaGoogle size={30} />
+    //       </Button>
+    //
+    //       <Link to="/forgot/password" className="float-right text-danger">
+    //         Forgot Password
+    //       </Link>
+    //     </div>
+    //   </div>
+    // </div>
+      <>
+        <div className="login-align-card">
+            <div className="card text-center">
+                <div className="card-body">
+                    <img src={AquaLogo} alt="AquaKart Logo" className="aqua-login-logo rounded-circle"/>
+                    <h5 className="card-title">Login</h5>
+                    <hr/>
+                    {loginForm()}
+                    <Button
+                            onClick={googleLogin}
+                            type="danger"
+                            className="mb-3"
+                            block
+                            shape="round"
+                            size="large"
+                          >
+                              <FaGoogle size={30} />
+                          </Button>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
+      </>
   );
 };
 

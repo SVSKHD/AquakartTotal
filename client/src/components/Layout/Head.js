@@ -4,14 +4,30 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
+import {useDispatch , useSelector} from "react-redux"
 import {FaUser} from "react-icons/fa"
+import firebase from "firebase";
+import {useHistory , Link} from "react-router-dom";
 
 const AquaNavHead = () => {
+  let dispatch = useDispatch();
+  let history = useHistory();
+  let { user, cart } = useSelector((state) => ({ ...state }));
+  const handleRoute = (path) =>{
+    history.push(path)
+  }
+  const logout = () => {
+    firebase.auth().signOut();
+    dispatch({
+      type: "LOGOUT",
+      payload: null,
+    });
+    history.push("/login");
+  };
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+        <Navbar.Brand href="#">Aquakart</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -34,7 +50,11 @@ const AquaNavHead = () => {
             />
             <Button variant="outline-success">Search</Button>
           </Form>
-          <Button className="m-1"><FaUser/></Button>
+          {!user && (
+              <Button className="m-1" onClick={()=>handleRoute("/login")}><FaUser/></Button>
+          )}
+
+
         </Navbar.Collapse>
       </Container>
     </Navbar>

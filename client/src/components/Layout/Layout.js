@@ -9,8 +9,9 @@ const AquaLayout = (props) => {
       <AquaNavHead />
       <SeoHead title={props.seotitle} />
       {props.children}
+        <br/>
       <AquaFooter />
-    </>
+        </>
   );
 };
 export default AquaLayout;

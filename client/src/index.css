@@ -2,6 +2,11 @@
 body{
   font-family: Poppins!important;
 }
+.card-footer{
+  border-radius: 0px !important;
+  background-color: #2c3e50 !important;
+  color:white!important;
+}
 .slider img,
 .card-image {
   height: 450px;
@@ -33,4 +38,19 @@ body{
   100% {
     transform: rotate(360deg);
   }
+}
+
+.aqua-login-page{
+  background-color: #2c3e50;
+}
+
+.aqua-login-logo{
+  height: 200px;
+}
+
+.login-align-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
