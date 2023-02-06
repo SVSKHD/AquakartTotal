@@ -43,7 +43,7 @@ import PreLoader from "./components/preloader/preloader";
 const Login = lazy(() => import("./pages/auth/Login"));
 const Register = lazy(() => import("./pages/auth/Register"));
 const Home = lazy(() => import("./pages/Home"));
-const Header = lazy(() => import("./components/nav/Header"));
+
 const SideDrawer = lazy(() => import("./components/drawer/SideDrawer"));
 
 const RegisterComplete = lazy(() => import("./pages/auth/RegisterComplete"));

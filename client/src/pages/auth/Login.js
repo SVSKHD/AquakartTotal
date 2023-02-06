@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { auth, googleAuthProvider } from "../../firebase";
 import { toast } from "react-toastify";
 import { Button } from "react-bootstrap";
-import { MailOutlined, GoogleOutlined } from "@ant-design/icons";
+import { MailOutlined } from "@ant-design/icons";
 import {FaGoogle} from "react-icons/fa"
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { createOrUpdateUser } from "../../functions/auth";
 import AquaLogo from "../../LogoImages/logo.png"
+import SeoHead from "../../components/Head/Head";
 
 const Login = ({ history }) => {
   const [email, setEmail] = useState("");
@@ -172,6 +172,7 @@ const Login = ({ history }) => {
     //   </div>
     // </div>
       <>
+          <SeoHead title="AquaKart | Login to the Best Online Softener sales"/>
         <div className="login-align-card">
             <div className="card text-center">
                 <div className="card-body">
