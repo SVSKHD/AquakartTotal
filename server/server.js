@@ -27,6 +27,11 @@ app.use(cors());
 
 // routes middleware
 readdirSync("./routes").map((r) => app.use("/api", require("./routes/" + r)));
+//crm routes
+readdirSync("./Crm/Routes").map((r) =>
+  app.use("/crm", require("./Crm/Routes/" + r))
+);
+
 
 // port
 const port = process.env.PORT || 8000;
