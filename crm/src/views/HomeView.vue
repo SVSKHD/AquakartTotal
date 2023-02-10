@@ -1,15 +1,15 @@
 <template>
   <div class="home">
-   <Home/>
+    <Home />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Home from "@/PageIndex/Home.vue"
+import Home from "@/PageIndex/Home.vue";
 
 export default {
-  name: 'HomeView',
-  components: {Home}
-}
+  name: "HomeView",
+  components: { Home },
+};
 </script>
