@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 // middlewares
-const { authCheck, adminCheck } = require("../middlewares/auth");
+const { authCheck, adminCheck } = require("../../middlewares/auth");
 
 // controller
 const { create, remove, list } = require("../controllers/coupon");

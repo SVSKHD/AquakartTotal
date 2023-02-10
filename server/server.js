@@ -26,7 +26,7 @@ app.use(bodyParser.json({ limit: "2mb" }));
 app.use(cors());
 
 // routes middleware
-readdirSync("./routes").map((r) => app.use("/api", require("./routes/" + r)));
+readdirSync("./ECOM/routes").map((r) => app.use("/api", require("./ECOM/routes/" + r)));
 //crm routes
 readdirSync("./Crm/Routes").map((r) =>
   app.use("/crm", require("./Crm/Routes/" + r))

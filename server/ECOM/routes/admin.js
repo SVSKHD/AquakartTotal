@@ -1,10 +1,10 @@
 const express = require("express");
-const { auth } = require("../firebase");
+const { auth } = require("../../firebase");
 
 const router = express.Router();
 
 // middlewares
-const { authCheck, adminCheck } = require("../middlewares/auth");
+const { authCheck, adminCheck } = require("../../middlewares/auth");
 
 const { orders, orderStatus } = require("../controllers/admin");
 
