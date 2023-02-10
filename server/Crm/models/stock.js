@@ -2,26 +2,20 @@ const mongoose = require("mongoose");
 
 const stockSchema = mongoose.Schema(
   {
+    stockName: {
+      type: String,
+    },
     stockCount: {
       type: Number,
     },
     stockDescription: {
       type: String,
     },
-    kotakBalance: {
-      type: String,
-    },
-    icicBalance: {
-      type: String,
-    },
-    date: {
-      type: String,
-    },
-    totalBalance: {
-      type: String,
+    stockValue: {
+      type: Number,
     },
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Stock", stockSchema);
+module.exports = mongoose.model("AquaStock", stockSchema);
