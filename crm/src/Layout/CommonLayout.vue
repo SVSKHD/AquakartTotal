@@ -9,7 +9,6 @@
           color="black"
           icon="eva-home-outline"
           to="/"
-          @click="drawerClick"
         />
 
         <q-toolbar-title>
