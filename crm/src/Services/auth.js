@@ -4,7 +4,7 @@ let crmUrl = process.env.VUE_APP_CRM
 let apiUrl = process.env.VUE_APP_APP
 
 const Signup = () =>{
-    Axios.post()
+    Axios.post(`${apiUrl}/`)
 }
 const AuthOperations = () =>{
     return{}
