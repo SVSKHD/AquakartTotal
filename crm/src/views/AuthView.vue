@@ -1,6 +1,6 @@
 <template>
   <div class="window-height window-width row justify-center items-center">
-    <q-card class="shadow-24" style="width: 400px; height: 440px">
+    <q-card class="shadow-24" style="width: 400px; height: 340px">
       <q-card-section class="text-center">
         <q-img
           src="../LogoImages/logo.png"
@@ -10,49 +10,8 @@
         <hr />
       </q-card-section>
       <q-card-section>
-        <form class="q-px-sm q-pt-xl">
-          <q-input
-            ref="email"
-            outlined
-            dense
-            clearable
-            v-model="email"
-            type="email"
-            lazy-rules
-            :rules="[this.required, this.isEmail, this.short]"
-            label="Email"
-          >
-            <template v-slot:prepend>
-              <q-icon name="eva-email-outline" />
-            </template>
-          </q-input>
-          <q-input
-            ref="email"
-            outlined
-            dense
-            clearable
-            v-model="email"
-            type="password"
-            lazy-rules
-            :rules="[this.required, this.isEmail, this.short]"
-            label="password"
-          >
-            <template v-slot:prepend>
-              <q-icon name="eva-unlock-outline" />
-            </template>
-          </q-input>
-        </form>
+        <q-btn color="orange-10" flat class="full-width" icon="eva-google-outline"  size="25px" />
       </q-card-section>
-
-      <q-card-actions class="q-px-lg">
-        <q-btn
-          unelevated
-          color="secondary"
-          @click="submit"
-          class="full-width text-white"
-          label="signin"
-        />
-      </q-card-actions>
     </q-card>
   </div>
 </template>
