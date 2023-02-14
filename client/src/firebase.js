@@ -2,13 +2,13 @@ import * as firebase from "firebase";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCHrd0ZhlpquBOit_u8s0R6tX5RLCMg6Ro",
-  authDomain: "aquakart-ecom.firebaseapp.com",
-  projectId: "aquakart-ecom",
-  storageBucket: "aquakart-ecom.appspot.com",
-  messagingSenderId: "1085150338457",
-  appId: "1:1085150338457:web:fd3189de42fce7f8f14708",
-  measurementId: "G-MYPKYC34QY",
+  apiKey: "AIzaSyCVxJRFoiUBasQ5hP6QJIbESBYa77DB-GA",
+  authDomain: "aquakart-test.firebaseapp.com",
+  projectId: "aquakart-test",
+  storageBucket: "aquakart-test.appspot.com",
+  messagingSenderId: "62931895266",
+  appId: "1:62931895266:web:171b48b5d672840fc9afbb",
+  measurementId: "G-RG4RDLPS2G",
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
