@@ -3,20 +3,16 @@
     <q-header elevated class="bg-white text-white">
       <q-toolbar>
         <q-btn dense flat color="black" :icon="icon" @click="drawerClick" />
-        <q-btn
-          dense
-          flat
-          color="black"
-          icon="eva-home-outline"
-          to="/"
-        />
-
-        <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
-          </q-avatar>
-          Aquakart
-        </q-toolbar-title>
+        <q-btn dense flat color="black" icon="eva-home-outline" to="/home" />
+        <q-space />
+        <q-chip square>
+          <q-avatar
+            icon="eva-globe-outline"
+            color="grey-10"
+            text-color="white"
+          />
+          {{ browserName }}
+        </q-chip>
       </q-toolbar>
     </q-header>
 
@@ -47,13 +43,15 @@
 </template>
 
 <script>
-import { ref, watch } from "vue";
+import { ref, watch, onBeforeMount } from "vue";
+import DeviceDetector from "device-detector-js";
 
 export default {
   setup() {
     let miniState = ref(true);
     let drawer = ref(false);
     let icon = ref("eva-arrowhead-left");
+    let browserName = ref("");
     let menu = ref([
       {
         name: "online-operations",
@@ -66,6 +64,16 @@ export default {
         icon: "eva-clipboard-outline",
       },
     ]);
+
+    //lifecycle
+    const BrowserDetect = onBeforeMount(() => {
+      const deviceDetector = new DeviceDetector();
+      const userAgent = navigator.userAgent;
+      const device = deviceDetector.parse(userAgent);
+      browserName.value = device.client.name;
+      console.log("browser", browserName.value);
+    });
+
     //watchers
     watch(miniState, () => {
       miniState.value
@@ -82,8 +90,10 @@ export default {
       miniState,
       menu,
       icon,
+      browserName,
       //functions
       drawerClick,
+      BrowserDetect,
     };
   },
 };

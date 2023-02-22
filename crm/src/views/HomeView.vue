@@ -6,7 +6,7 @@
 
 <script>
 // @ is an alias to /src
-import Home from "@/PageIndex/Home.vue";
+import Home from "@/PagesIndex/Home.vue";
 import returnUrls from "@/Services/constants";
 export default {
   name: "HomeView",
