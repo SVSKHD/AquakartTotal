@@ -10,6 +10,7 @@ const Home = () => {
   return (
     <>
       <AquaLayout seotitle="Aquakart | Online Shopping for Softeners and Ro and every household products">
+      
 
       </AquaLayout>
     </>
