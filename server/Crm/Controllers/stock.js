@@ -25,8 +25,17 @@ exports.updateStock = async (req, res) => {
     ).exec();
     res.json(updated);
   } catch (error) {
-    return res.status(400).json("updating stock failed")
+    return res.status(400).json("updating stock failed");
   }
 };
 
-exports.deletedStock = (req, res) => {};
+exports.deletedStock = async (req, res) => {
+  try {
+    const deleted = await AquaStock.findOneAndRemove({
+      name: req.params.name,
+    }).exec();
+    res.status(200).json(deleted);
+  } catch (error) {
+    res.status(400).json("deleting the stock failed");
+  }
+};

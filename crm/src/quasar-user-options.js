@@ -8,9 +8,10 @@ import "@quasar/extras/fontawesome-v5/fontawesome-v5.css";
 import "@quasar/extras/ionicons-v4/ionicons-v4.css";
 import "@quasar/extras/mdi-v4/mdi-v4.css";
 import "@quasar/extras/eva-icons/eva-icons.css";
+import { Notify } from "quasar";
 
 // To be used on app.use(Quasar, { ... })
 export default {
   config: {},
-  plugins: {},
+  plugins: [Notify],
 };

@@ -5,8 +5,12 @@ import router from "./router";
 import store from "./store";
 import { Quasar } from "quasar";
 import quasarUserOptions from "./quasar-user-options";
+import controls from "./controls/controls"; 
 
-createApp(App)
+const Aqua = createApp(App)
+  
+controls(Aqua)
+Aqua
   .use(Quasar, quasarUserOptions)
   .use(store)
   .use(router)

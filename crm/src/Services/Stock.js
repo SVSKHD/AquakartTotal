@@ -1,17 +1,16 @@
-import Axios from "axios"
-import returnUrls from "./constants"
+import Axios from "axios";
+import API from "./constants";
 
-const {url} = returnUrls()
+let CRM = API.appApis.CRM;
 
-const createStock = () =>{
-    Axios.post()
-}
+const createStock = (data) => (
+  Axios.post(`${CRM}/create-stock`, data)
+);
 
+const getStock = () => Axios.get(`${CRM}/get-allstocks`);
 
+const StockOperations = () => {
+  return { createStock, getStock };
+};
 
-
-const StockOperations = () =>{
-    return{createStock}
-}
-
-export default StockOperations
+export default StockOperations;
