@@ -138,7 +138,6 @@ export default {
         totalStockValue.value = stockData.value.reduce((acc, cv) => {
           return acc + cv.stockValue * cv.stockCount;
         }, 0);
-        console.log("stock total value" , totalStockValue.value)
       });
     });
 

@@ -34,13 +34,13 @@ function createNotification(message, options) {
 export default {
   createNotification,
   createInfoNotification(message) {
-    return createNotification(message, { timeout: 300, type: "info" });
+    return createNotification(message, { timeout: 200, type: "info" });
   },
   createSuccessNotification(message) {
-    return createNotification(message, { timeout: 200, type: "positive" });
+    return createNotification(message, { timeout: 400, type: "positive" });
   },
   createErrorNotification(message) {
-    return createNotification(message, { timeout: 400, type: "negative" });
+    return createNotification(message, { timeout: 200, type: "negative" });
   },
   dismiss() {
     allNotifications.forEach((notification) => {

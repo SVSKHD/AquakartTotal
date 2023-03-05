@@ -10,16 +10,44 @@
         <hr />
       </q-card-section>
       <q-card-section>
-        <q-btn color="orange-10" flat class="full-width" icon="eva-google-outline"  size="25px" />
+        <q-btn
+          color="orange-10"
+          flat
+          class="full-width"
+          icon="eva-google-outline"
+          @click="handleGoogleLogin"
+          size="25px"
+        />
       </q-card-section>
     </q-card>
   </div>
 </template>
 
 <script>
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import notificationHelpers from "@/helpers/notificationHelpers";
+import { useRouter } from "vue-router";
 export default {
   setup() {
-    return {};
+    const { createErrorNotification, createSuccessNotification } =
+      notificationHelpers;
+    const provider = new GoogleAuthProvider();
+    const auth = getAuth();
+    const Router = useRouter();
+    const handleGoogleLogin = () => {
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          console.log(result);
+          Router.push("/home");
+          createSuccessNotification("succeffully logged in");
+        })
+        .catch(() => {
+          createErrorNotification("please try again");
+        });
+    };
+    return {
+      handleGoogleLogin,
+    };
   },
 };
 </script>
