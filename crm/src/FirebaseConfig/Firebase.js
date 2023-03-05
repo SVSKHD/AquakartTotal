@@ -1,4 +1,5 @@
-import * as firebase from "firebase";
+import { initializeApp } from "firebase";
+import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -8,11 +9,11 @@ const firebaseConfig = {
   storageBucket: "aquakart-test.appspot.com",
   messagingSenderId: "62931895266",
   appId: "1:62931895266:web:171b48b5d672840fc9afbb",
-  measurementId: "G-RG4RDLPS2G"
+  measurementId: "G-RG4RDLPS2G",
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+const auth = getAuth();
 
 // export
-export const auth = firebase.auth();
-export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+export { app, auth };

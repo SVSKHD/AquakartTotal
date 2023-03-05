@@ -10,7 +10,9 @@
     </q-card-section>
     <q-separator vertical />
     <q-card-section>
-      <div class="text-h6">Total Stock Value -- {{ total }}/-</div>
+      <div class="text-h6">
+        Total Stock Value -- <span class="text-green">{{ total }}/-</span>
+      </div>
     </q-card-section>
   </q-card>
 </template>

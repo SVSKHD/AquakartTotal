@@ -3,7 +3,7 @@
     <BalanceCard title="Balance On Present Day" />
   </div>
   <div class="q-pa-md">
-    <StockCard title="Stock As Of Today" total="30000">
+    <StockCard title="Stock As Of Today" :total="totalStockValue">
       <q-btn
         align="between"
         class="btn-fixed-width"
@@ -135,7 +135,10 @@ export default {
         apiData.map((d) => {
           stockData.value.push(d);
         });
-        //  totalStockValue.value=stockData.value.reduce((a,b)=>)
+        totalStockValue.value = stockData.value.reduce((acc, cv) => {
+          return acc + cv.stockValue * cv.stockCount;
+        }, 0);
+        console.log("stock total value" , totalStockValue.value)
       });
     });
 
