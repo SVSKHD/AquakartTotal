@@ -1,18 +1,7 @@
 <template>
     <q-layout view="hHh lpR fFf">
   
-      <q-header elevated class="bg-primary text-white">
-        <q-toolbar>
-          <q-toolbar-title>
-            <q-avatar>
-              <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-            </q-avatar>
-            Aquakart
-          </q-toolbar-title>
-  
-          <q-btn dense flat round icon="eva-person-outline" @click="toggleRightDrawer" />
-        </q-toolbar>
-      </q-header>
+<aqua-header @toggle-drawer="toggleRightDrawer"/>
   
       <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
         <!-- drawer content -->
@@ -22,24 +11,17 @@
         <router-view />
       </q-page-container>
   
-      <q-footer elevated class="bg-secondary text-white">
-        <q-toolbar>
-          <q-toolbar-title>
-            <q-avatar>
-              <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
-            </q-avatar>
-            <div>Title</div>
-          </q-toolbar-title>
-        </q-toolbar>
-      </q-footer>
+<aqua-footer/>
   
     </q-layout>
   </template>
   
   <script>
   import { ref } from 'vue'
-  
+  import AquaHeader from "./Header.vue"
+  import AquaFooter from "./footer.vue"
   export default {
+    components:{AquaHeader , AquaFooter},
     setup () {
       const rightDrawerOpen = ref(false)
   
